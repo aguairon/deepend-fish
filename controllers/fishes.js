@@ -17,11 +17,10 @@ function createRoute(req, res) {
 }
 
 function showRoute(req, res) {
-  console.log(req.params.id)
   Fish
     .findById(req.params.id)
-    .then(fish => console.log(fish))
-    .catch(err => console.log(err.message))
+    .then(fish => res.status(200).json(fish))
+    .catch(err => res.status(404).json(err))
 }
 
 module.exports = {
