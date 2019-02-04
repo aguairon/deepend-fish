@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import FishesIndex from './components/FishesIndex'
 import FishesNew from './components/FishesNew'
+import FishesShow from './components/FishesShow'
 import Hero from './components/Hero'
 
 class App extends React.Component {
@@ -18,6 +19,7 @@ class App extends React.Component {
           <Navbar />
           <Switch>
             <Route path="/fishes/new" component={FishesNew} />
+            <Route path="/fishes/:id" component={FishesShow} />
             <Route path="/fishes" component={FishesIndex} />
             <Route path="/" component={Hero} />
           </Switch>

@@ -16,7 +16,16 @@ function createRoute(req, res) {
     .catch(err => console.log(err.message))
 }
 
+function showRoute(req, res) {
+  console.log(req.params.id)
+  Fish
+    .findById(req.params.id)
+    .then(fish => console.log(fish))
+    .catch(err => console.log(err.message))
+}
+
 module.exports = {
   index: indexRoute,
-  create: createRoute
+  create: createRoute,
+  show: showRoute
 }
