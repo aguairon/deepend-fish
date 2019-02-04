@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 
+import FishCard from './FishCard'
+
 class FishesIndex extends React.Component {
   constructor() {
     super()
@@ -19,10 +21,11 @@ class FishesIndex extends React.Component {
     return(
       <section className="section">
         <div className="container">
+          <h1 className="title is-1">Most common Fishes</h1>
           <div className="columns is-multiline">
             {this.state.fishes.map(fish =>
               <div className="column is-one-quarter" key={fish._id}>
-                <h2 className="title is-2">{fish.name}</h2>
+                <FishCard {...fish}/>
               </div>
             )}
           </div>

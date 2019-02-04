@@ -2,10 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import 'bulma'
 
+import './style.scss'
+
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import FishesIndex from './components/FishesIndex'
 import FishesNew from './components/FishesNew'
+import Hero from './components/Hero'
 
 class App extends React.Component {
   render() {
@@ -13,10 +16,10 @@ class App extends React.Component {
       <BrowserRouter>
         <main>
           <Navbar />
-          <h1 className="title is-1">Hello</h1>
           <Switch>
             <Route path="/fishes/new" component={FishesNew} />
             <Route path="/fishes" component={FishesIndex} />
+            <Route path="/" component={Hero} />
           </Switch>
         </main>
       </BrowserRouter>
